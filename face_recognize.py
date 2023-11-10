@@ -8,14 +8,14 @@ people = ['chris', 'jenna']
 # lables = np.load('labels.npy')
 
 face_recognizer = cv.face.LBPHFaceRecognizer_create()
-face_recognizer.read('face_trained.yml')
+face_recognizer.read('face_trained.yml') #read saved train data
 
 img = cv.imread(r'/Users/chrischo/Documents/Computer_Vision_AI/facedetection/people/val/jenna/IMG_2350.JPG')
 
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 cv.imshow('Person', gray)
 
-face_rect = haar_cascade.detectMultiScale(gray, 1.1, 4)
+face_rect = haar_cascade.detectMultiScale(gray, 1.1, 4) #detect face
 for (x,y,w,h) in face_rect:
     face_roi = gray[y:y+h,x:x+w]
     
